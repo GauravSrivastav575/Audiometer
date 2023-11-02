@@ -6,7 +6,6 @@ function plotChart() {
 }
 
 let myChart = null;
-
 function plotblankChart(leftArray, rightArray) {
   const ctx = document.getElementById("myChart");
   const data = {
@@ -17,6 +16,7 @@ function plotblankChart(leftArray, rightArray) {
         //   data: [10, 35, 50, 90, 80],
         data: leftArray,
         borderWidth: 3,
+        
       },
       {
         label: "Right Ear",
@@ -28,6 +28,9 @@ function plotblankChart(leftArray, rightArray) {
     ],
   };
 
+
+
+
   const canvasBackgroundColor = {
     id: "canvasBackgroundColor",
     beforeDraw(chart) {
@@ -36,13 +39,13 @@ function plotblankChart(leftArray, rightArray) {
       const yScale = scales.y;
       // Define 10 different background colors
       const segmentColors = [
-        "rgba(3, 252, 15, 0.2)",
-        "rgba(123, 252, 3, 0.2)",
-        "rgba(3, 127, 252, 0.2)",
-        "rgba(252, 78, 3, 0.2)",
-        "rgba(252, 3, 3, 0.2)",
+        "rgba(3, 252, 15,0.8)",
+        "rgba(123, 252, 3, 0.8)",
+        "rgba(3, 127, 252, 0.8)",
+        "rgba(252, 78, 3, 0.8)",
+        "rgba(252, 3, 3, 0.8)",
       ];
-
+     
       const segmentHeight = yScale.max / segmentColors.length;
 
       segmentColors.forEach((color, index) => {
@@ -74,6 +77,7 @@ function plotblankChart(leftArray, rightArray) {
         },
         y: {
           beginAtZero: true,
+          suggestedMax: 100,
           title: {
             display: true,
             text: "DECIBEL LEVEL", // Title for the Y-axis
